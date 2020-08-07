@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="container">
+    <div class="col-md-12">
+      <h1 class="text-center">CheckList Completo</h1>
+      <ion-grid>
+        <ion-row class="border-top">
+          <ion-col>
+            <ion-row><span class="small text-muted">Proprietário</span></ion-row>
+            <ion-row>{{ detalhes.nome }}</ion-row>
+          </ion-col>
+          <ion-col class="border-left">
+            <ion-row><span class="small text-muted">Telefone</span></ion-row>
+            <ion-row>{{ detalhes.telefone }}</ion-row>
+          </ion-col>
+        </ion-row>
+        
+        <ion-row class="border-top">
+          <ion-col>
+            <ion-row><span class="small text-muted">Endereço</span></ion-row>
+            <div style="font-size: 11px;">
+              <ion-row>{{ detalhes.endereco }}, {{ detalhes.bairro }} - {{ detalhes.cidade }}</ion-row>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="border-top">
+          <ion-col>
+            <ion-row><span class="small text-muted">Setor</span></ion-row>
+              <ion-row><ion-badge color="{{ setorCor }}">{{ statusSetor }}</ion-badge></ion-row>
+          </ion-col>
+          <ion-col class="border-left">
+            <ion-row><span class="small text-muted">Data de cadastro</span></ion-row>
+              <ion-row>{{ detalhes.data_cadastro }}</ion-row>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="border-top">
+          <ion-col size="4">
+            <ion-row><span class="small text-muted">Placa</span></ion-row>
+            <ion-row>{{ detalhes.placa | uppercase}}</ion-row>
+          </ion-col>
+          <ion-col class="border-left">
+            <ion-row><span class="small text-muted">Marca / Modelo</span></ion-row>
+            <ion-row><img [src]="marcaLogo" />{{ marcaNome }} - {{ detalhes.modelo }}</ion-row>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="border-top border-bottom mb-5">
+          <ion-col size="4">
+            <ion-row><span class="small text-muted">Ano</span></ion-row>
+            <ion-row>{{ detalhes.ano }}</ion-row>
+          </ion-col>
+          <ion-col size="4" class="border-left">
+            <ion-row><span class="small text-muted">Km</span></ion-row>
+            <ion-row> {{ detalhes.km }}</ion-row>
+          </ion-col>
+          <ion-col class="border-left">
+            <ion-row><span class="small text-muted">Marca Pneus</span></ion-row>
+            <ion-row>{{ detalhes.marca_pneus }}</ion-row>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-card>
+              <ion-card-header>
+                Visualização
+              </ion-card-header>
+            <img [src]="detalhes.aspectos_externos" />
+            </ion-card>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+              <img [src]="detalhes.assinatura_cliente" />
+              <div class="border-top"></div>
+              <ion-row>Assinatura do cliente</ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>

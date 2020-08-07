@@ -1,20 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+    <h2>Buscar veículos</h2>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<div id="container" class="container">
+  <div style='width:100%; margin-top: 5px;'>
+    <img src="../../assets/logo.png"  alt="Logo" class="img-fluid" style="width: 80%;">
   </div>
-</ion-content>
+  <ion-grid name="grid">
+    <ion-row name="browsers">
+      <ion-col class="text-center">
+        <div class="ion-text-center ml-5" style="width: 70%;">
+          <button (click)="abreAlert()" class="btn btn-secondary btn-lg btn-block"> Busca por placa &nbsp;<ion-icon name="search" class=""></ion-icon>
+          </button>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row name="browsers">
+      <ion-col>
+        <div class="ion-text-center ml-5" style="width: 70%;">
+          <button [routerLink]="['/lista']" routerdirection="forward" class="btn btn-secondary btn-lg btn-block">listar todos &nbsp; <ion-icon name="list-outline"></ion-icon>
+          </button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</div>
+<div>
+  <h5 class="text-center border"><strong>AtriaLub - Denis</strong></h5>
+</div>

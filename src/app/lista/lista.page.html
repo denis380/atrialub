@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-item>
+          <h2>Veículos no pátio</h2>
+      </ion-item>
+    </ion-list-header>
+    <ion-item *ngFor="let veiculo of carros" [routerLink]="['/detalhes-veiculo']" [queryParams]="{'codigoVeiculo' : veiculo.codCheckList}" class="border">
+      <ion-grid>
+        <ion-row class="">
+          <ion-col>
+            <ion-icon name="person"></ion-icon>
+            {{ veiculo.nome }}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-icon name="medical"></ion-icon>
+            {{ veiculo.placa | uppercase}}
+          </ion-col>
+          <ion-col size="7" class="border-left">
+            <ion-icon name="car"></ion-icon>
+            {{ veiculo.marca | uppercase}} - {{ veiculo.modelo }}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      </ion-item>
+  </ion-list>
+</ion-content>
